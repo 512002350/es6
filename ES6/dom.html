@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="block">默认内容</div>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <div class="one">hello
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+    </div>
+    <div class="one">world</div>
+</body>
+<script>
+    var block = document.getElementById('block')
+    console.log(block);
+    block.textContent = 'js设置的文本'//修改dom文本元素
+
+    var contents = document.querySelector(".one")//获取到所有对应的元素
+    var content = document.querySelector("#block")//获取到匹配的第一个元素，就算是使用的class选择器，但是依旧只会选择匹配到的第一个
+    // 如果要选中多个选择器，则需要用逗号进行分隔
+    // for (var i = 0; i < contents.length;i++){
+    //     contents[i].textContent = '你好'
+    // }
+    contents.previousElementSibling.innerHTML = '你好'//选中当前节点的前一个节点
+    contents.nextElementSibling.innerHTML = '你好世界'//选中当前节点的后一个节点
+
+    var a = contents.parentNode
+    // 选中当前节点的父节点
+    console.log(a);
+    var b = contents.children
+    // 选中当前节点的子节点
+    console.log(b);
+</script>
+</html>
